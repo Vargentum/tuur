@@ -1,0 +1,625 @@
+/*============================================================
+styles from html page
+============================================================*/
+body {
+  /*padding-top: 60px;*/
+  /*padding-bottom: 40px;*/
+}
+.container {
+  min-width: 1024px;
+  width: 1024px;
+  max-width: 1366px;
+}
+
+  /*.thumbnails { text-align:center; }*/
+  /*.thumbnails > li > a { display: inline-block; float: none; }*/
+
+  /*.thumbnail, .thumbnail:hover { -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; border: none; }*/
+
+.thumbnails { text-align:center; }
+.thumbnails > .thumbnail {
+  padding:0; display: inline-block; float: none; margin-right: 10px;  margin-bottom: 15px; width:310px; height: 350px; position: relative; overflow: hidden;
+  /*-moz-box-shadow: 0 1px 7px 0.75px #7bdbd6;*/
+  /*-webkit-box-shadow: 0 1px 7px 0.75px #7bdbd6;*/
+  /*box-shadow: 0 2px 6px 0.21px #000;*/
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: #c9c9c9 0 1px 7px 0.75px;
+  -moz-box-shadow:  #c9c9c9 0 1px 7px 0.75px;
+  box-shadow: #c9c9c9 0 1px 7px 0.75px;
+  behavior: url(/pie/PIE.php);
+}
+.thumbnails > .thumbnail:hover {
+  text-decoration: none;
+}
+.thumbnails > .thumbnail .preview {
+  width: 310px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+.thumbnails > .thumbnail .preview img {
+  position:absolute; top:0px; left:0px; z-index:-1;
+}
+.thumbnail-container {
+  background: #fff;
+  /*max-width: 460px;*/
+  margin: 0 auto;
+}
+
+/*============================================================
+old developer styles
+============================================================*/
+.background {
+  background: url("images/background.jpg") no-repeat scroll -10px 0 transparent;
+  height: 100%;
+  opacity: 0.5;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  display: none;
+}
+@font-face {
+  font-family: Ubuntu-Bold;
+  src: url('fonts/Ubuntu/Ubuntu-Bold.ttf');
+}
+
+@font-face {
+  font-family: Ubuntu-Italic;
+  src: url('fonts/Ubuntu/Ubuntu-Italic.ttf');
+}
+
+@font-face {
+  font-family: Ubuntu-Light;
+  src: url('fonts/Ubuntu/Ubuntu-Light.ttf');
+}
+
+@font-face {
+  font-family: Roboto-Thin;
+  src: url('fonts/Roboto/Roboto-Thin.ttf');
+}
+
+@font-face {
+  font-family: RobotoCondensend-Regular;
+  src: url('fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf');
+}
+
+@font-face {
+  font-family: RobotoCondensend-Bold;
+  src: url('fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf');
+}
+
+h1.home {
+  color: #34b9b0;
+  font: 40px Roboto-Thin;
+}
+.top-ads {
+  background-image: url('images/top_ads.jpg');
+  height: 60px;
+}
+
+.header-line {
+  background: url('images/bg_header_line.gif') 0 0 repeat;
+  height: 43px;
+  line-height: 40px;
+}
+
+.logo {
+  margin-left: 40px;
+}
+
+.header-line a {
+  color: #ecdbf4;
+  font-size: 14px;
+  font-family: Ubuntu-Bold;
+}
+
+.header-line a:hover {
+  color: #ecdbf4;
+  text-decoration: none;
+}
+
+.btn-lighttours {
+  background: url("images/btn_lighttour.png") no-repeat scroll 0 0 transparent;
+  display: block;
+  height: 70px;
+  padding-top: 7px;
+  text-align: center;
+  width: 127px;
+  font: 14px Ubuntu-Bold;
+  color: #fff;
+}
+
+.btn-lighttours:hover {
+  font: 14px Ubuntu-Bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.filter-type-tours li{
+  border: 1px solid #FFFFFF;
+  display: block;
+  margin: 0 4px;
+  padding: 2px;
+  position:relative;
+  /*zoom:1;*/
+  background:#fff;
+
+  behavior: url(/pie/PIE.htc);
+  /*behavior: url('assets/pie/PIE.htc');*/
+
+}
+.filter-type-tours li:hover, .filter-days-tours li:hover {
+  border: 1px solid #9adcd8;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+
+  -moz-box-shadow: 0 1px 7px 0.75px #7bdbd6;
+  -webkit-box-shadow: 0 1px 7px 0.75px #7bdbd6;
+  box-shadow: 0 1px 7px 0.75px #7bdbd6;
+  background:#fff;
+  position:relative;
+  /*zoom:1;*/
+  /*behavior: url(/pie/PIE.htc);*/
+
+}
+
+.filter-type-tours li.selectedBox {
+  background-color: transparent;
+  height: 70px;
+  position: absolute;
+  width: 70px;
+}
+
+.filter-grey-line {
+  background: url("images/line_filter_center.png")repeat-x scroll 0 0 transparent;
+  height: 10px;
+  display: block;
+  margin: 5px 0;
+}
+
+.filter-vert-line {
+  background: url("images/filter_vert_line.png")repeat-y scroll 0 0 transparent;
+  width: 3px;
+  display: block;
+
+}
+
+.filter-label-price {
+  font: 14px Ubuntu-Bold;
+  color: #adb5bd;
+  text-decoration: none;
+}
+
+.filter-price-tours li{
+  border: 1px solid #FFFFFF;
+  display: block;
+  /*margin: 0 10px;*/
+  padding: 5px 13px;
+  color: #a67fbc;
+  font: 14px Ubuntu-Bold;
+  position: relative;
+}
+
+.filter-days-tours li{
+  border: 1px solid #FFFFFF;
+  display: block;
+  /*margin: 0 10px;*/
+  padding: 5px 10px;
+  color: #a67fbc;
+  font: 14px Ubuntu-Bold;
+  position: relative;
+  behavior: url(/pie/PIE.htc);
+}
+
+.filter-stars-tours li{
+  border: 1px solid #FFFFFF;
+  display: block;
+  /*margin: 0 10px;*/
+  padding: 5px 5px;
+  color: #a67fbc;
+  font: 14px Ubuntu-Bold;
+  position: relative;
+}
+
+.filter-price-tours li:first-child, .filter-stars-tours li:first-child, .filter-days-tours li:first-child {
+  margin-left: -10px;
+
+}
+
+.filter-price-tours li:last-child {
+  margin-right: 0px;
+
+}
+
+.filter-price-tours li:hover {
+
+  /*-webkit-border-radius: 5px;*/
+  /*-moz-border-radius: 5px;*/
+  /*border-radius: 5px;*/
+  /*border: 1px solid #9adcd8;*/
+  /*-moz-box-shadow: 0 1px 7px 0.75px #7bdbd6;*/
+  /*-webkit-box-shadow: 0 1px 7px 0.75px #7bdbd6;*/
+  /*box-shadow: 0 1px 7px 0.75px #7bdbd6;*/
+  color: #34b9b0;
+  position: relative;
+  border: 1px solid #9adcd8;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: #7bdbd6 0 1px 7px 0.75px;
+  -moz-box-shadow:  #7bdbd6 0 1px 7px 0.75px;
+  box-shadow: #7bdbd6 0 1px 7px 0.75px;
+
+
+}
+
+.filter-label-currency {
+  font: 14px Ubuntu-Italic;
+  color: #cab2d7;
+  margin-left: 210px;
+}
+
+.filter-element-currency {
+  color: #cab2d7;
+  font: 15px Ubuntu-Bold;
+}
+
+
+
+.filter-element-currency {
+  line-height: 20px;
+  height: 20px;
+  overflow:hidden;
+}
+
+.filter-element-currency select {
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 2px 2px 2px 2px;
+  border: none;
+  background: transparent url('images/filter_arrow_currency.png') no-repeat 40px center;
+}
+
+.tours > li {
+  margin-left: 10px;
+}
+
+.tours .span4 {
+  width: 310px;
+}
+
+.outer-center {
+  float: right;
+  right: 50%;
+  position: relative;
+}
+.inner-center {
+  float: right;
+  right: -50%;
+  position: relative;
+}
+.clear {
+  clear: both;
+}
+
+.row-fluid ul.thumbnails li.span12 + li { margin-left : 0px; }
+.row-fluid ul.thumbnails li.span6:nth-child(2n + 3) { margin-left : 0px; }
+.row-fluid ul.thumbnails li.span4:nth-child(3n + 4) { margin-left : 0px; }
+.row-fluid ul.thumbnails li.span3:nth-child(4n + 5) { margin-left : 0px; }
+
+
+.thumbnails-stars {
+  background: none repeat scroll 0 0 #FFFFFF;
+  display: inline-block;
+  height: 35px;
+  /*margin-top: 170px;*/
+  top: -35px;
+  padding: 0 10px;
+  line-height: 30px;
+
+  position: relative;
+  border: 1px solid #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  behavior: url(/pie/PIE.htc);
+}
+
+.count_days {
+  margin-left: 15px;
+  margin-top: 5px;
+}
+
+.tour-name {
+  color:#7b6096;
+  font: 28px RobotoCondensend-Regular;
+  margin-top: -30px;
+}
+
+.label-date-start-tour {
+  font: 12px Ubuntu-Light;
+  color: #7f8e93;
+}
+
+.block-info-tour {
+  padding: 0 20px;
+  margin-top: 20px;
+}
+.block-info-tour > div {
+  line-height: 35px;
+}
+
+
+.label-price-tour {
+  font: 36px RobotoCondensend-Regular;
+  color: #de4848;
+}
+
+.none-right {
+  width: 5px;
+  border: 1px solid;
+  position: absolute;
+  height: 75px;
+  top: 0px;
+  left: 75px;
+  background: #fff;
+}
+
+#block-tour-info  .tour-name {
+  border: 0px solid; z-index: 100; position: relative; height: 365px; width: 650px;
+  margin: 0;
+}
+
+#block-tour-info .tour-name h1 {
+  color: #FFFFFF;
+  font: 68px RobotoCondensend-Bold;
+  margin: 100px 0 0 80px;
+  padding: 0;
+  -webkit-box-shadow: #7bdbd6 0 1px 7px 0.75px;
+  -moz-box-shadow:  #7bdbd6 0 1px 7px 0.75px;
+  text-shadow: 0px 1px 3px black;
+}
+
+.tour-info {
+  border: 0px solid transparent;
+  /*height: 620px;*/
+  position: relative;
+  /*right: 20px;*/
+  right: -1px;
+  margin-right: -1px;
+
+  width: 600px;
+  z-index: 100;
+  background: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: #c9c9c9 0 1px 7px 0.75px;
+  -moz-box-shadow:  #c9c9c9 0 1px 7px 0.75px;
+  box-shadow: #c9c9c9 0 1px 7px 0.75px;
+  behavior: url(/pie/PIE.htc);
+  padding-bottom: 30px;
+  min-height: 600px;
+}
+
+.tour-info-date {
+  background: none repeat scroll 0 0 #34B9B0;
+  border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  height: 75px;
+  /*position: absolute;*/
+  width: 100%;
+  behavior: url(/pie/PIE.htc);
+}
+
+.tour-price {
+  background: #fefadc;
+  width: 240px;
+  height: 265px;
+  margin-left: 20px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: #f5e6cb 0 1px 7px 0.75px;
+  -moz-box-shadow:  #f5e6cb 0 1px 7px 0.75px;
+  box-shadow: #f5e6cb 0 1px 7px 0.75px;
+  /*margin-left: 80px;*/
+  margin-right: 40px;
+  margin-bottom: 40px;
+  behavior: url(/pie/PIE.htc);
+  position: relative;
+}
+.tour-operator {
+  background: #fefadc;
+  width: 280px;
+  height: 270px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: #f5e6cb 0 1px 7px 0.75px;
+  -moz-box-shadow:  #f5e6cb 0 1px 7px 0.75px;
+  box-shadow: #f5e6cb 0 1px 7px 0.75px;
+  /*margin-left: 80px;*/
+  behavior: url(/pie/PIE.htc);
+  position: relative;
+}
+
+#tour-info-price-operator {
+  border: 0px solid transparent; position: absolute; z-index: 10; top: 360px; left: 55px; min-width: 285px; max-width: 600px;
+}
+
+.tour-info-date .row-container {
+  margin-top: 15px; width: 550px; margin-left: 50px;
+}
+
+.air-line {
+  background: url('images/air-line.png') no-repeat 0 0 transparent;
+  width: 53px;
+  height: 16px;
+  float: left;
+  margin-top: 25px;
+}
+
+.tour-info-date .label-date-tour {
+  color: #cfebe9;
+  font: 13px Ubuntu-Bold;
+}
+
+.tour-info-date .tour-date-value {
+  font-size: 18px;
+  color: #fff;
+}
+
+
+.hotel-name-rating .hotel-name {
+  color: #E76335;
+  display: inline-block;
+  font: 17px Ubuntu-Bold;
+  margin-right: 30px;
+  text-transform: uppercase;
+}
+
+.label-count-days  {
+  color: #000;
+  font: 37px Ubuntu-Light;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.tour-info .thumbnails {
+  margin-top: 30px;
+}
+
+.tour-info .thumbnails li {
+  width: 90px;
+  height: 90px;
+  margin-left: 0px;
+  margin-right: 10px;
+}
+.tour-info .thumbnails li .thumbnail {
+  padding: 0;
+  border: 0px solid;
+}
+
+.tour-info .thumbnails li:last-child .thumbnail{
+  color: #34b9b0;
+  font: 15px Ubuntu-Light;
+  box-shadow: none;
+  text-decoration: underline;
+}
+
+.tour-info .thumbnails li:last-child .thumbnail b {
+  font: 15px Ubuntu-Bold;
+}
+
+.tour-info .thumbnails li:last-child .thumbnail img {
+  margin-top: 20px;
+}
+
+
+.tour-info .thumbnails li:last-child .thumbnail span {
+  display: block;
+  margin-top: 10px;
+  width: 90px;
+}
+
+.tour-info .preview-text {
+  color: #474747;
+  font: 15px Ubuntu-Light;
+}
+
+.tour-info .tour-features {
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+.tour-info .tour-features .label-features, .tour-info .tour-timezone {
+  /*color: #548196;*/
+  color: #7f8e93;
+  font: 15px Ubuntu-Light;
+
+}
+
+.tour-info .tour-features .features-value {
+  color: #548196;
+  font: 15px Ubuntu-Bold;
+  background-color: #d5efe8;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 10px;
+  display: inline;
+}
+.tour-info .tour-features .features-value:last-child {
+  margin: 0;
+}
+
+.tour-info .tour-features > div {
+  float: left;
+}
+
+.tour-info .filter-vert-line {
+  display: block;
+  height: 65px;
+  width: 5px;
+  margin: 0 30px;
+}
+
+
+.features-value-container {
+  margin-top: 10px;
+}
+
+.label-brown {
+  color: #d89268;
+  font: 13px Ubuntu-Bold;
+  text-align: center;
+  margin: 20px 0 0;
+}
+
+.tour-price-value {
+  color: #de4848;
+  font: 60px RobotoCondensend-Bold;
+  text-align: center;
+}
+
+.btn-buy-tour {
+  width: 169px;
+  height: 55px;
+  background: url('images/btn_buy_tour.png') no-repeat 0 0 transparent;
+  margin: 0 auto;
+  text-align: center;
+  font: 31px/48px Ubuntu-Light;
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.btn-help-buy-tour {
+  color: #D89268 !important;
+  font: 15px Ubuntu-Light;
+  position: absolute;
+  text-align: center;
+  text-decoration: underline !important;
+  top: 225px;
+
+}
+
+.tour-operator .tour-operator-name {
+  color: #AB432F;
+  font: 20px Ubuntu-Bold;
+  margin-top: 20px;
+  padding: 0 37px;
+  text-align: center;
+}
+
+
+/*============================================================
+NEW STYLES
+============================================================*/

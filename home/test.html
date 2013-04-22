@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+  <!--[if lte IE 6]></base><![endif]-->
+  <title></title>
+
+  <!-- Le styles -->
+  <link href="assets/css/bootstrap.css" rel="stylesheet">
+  <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href='template_styles.css' rel="stylesheet">
+
+  <style type="text/css">
+    body {
+      /*padding-top: 60px;*/
+      /*padding-bottom: 40px;*/
+    }
+    .container {
+      min-width: 1024px;
+      width: 1024px;
+      max-width: 1366px;
+    }
+
+      /*.thumbnails { text-align:center; }*/
+      /*.thumbnails > li > a { display: inline-block; float: none; }*/
+
+      /*.thumbnail, .thumbnail:hover { -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; border: none; }*/
+
+    .thumbnails { text-align:center; }
+    .thumbnails > .thumbnail {
+      padding:0; display: inline-block; float: none; margin-right: 10px;  margin-bottom: 15px; width:310px; height: 350px; position: relative; overflow: hidden;
+      /*-moz-box-shadow: 0 1px 7px 0.75px #7bdbd6;*/
+      /*-webkit-box-shadow: 0 1px 7px 0.75px #7bdbd6;*/
+      /*box-shadow: 0 2px 6px 0.21px #000;*/
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      -webkit-box-shadow: #c9c9c9 0 1px 7px 0.75px;
+      -moz-box-shadow:  #c9c9c9 0 1px 7px 0.75px;
+      box-shadow: #c9c9c9 0 1px 7px 0.75px;
+      behavior: url(/pie/PIE.php);
+    }
+    .thumbnails > .thumbnail:hover {
+      text-decoration: none;
+    }
+    .thumbnails > .thumbnail .preview {
+      width: 310px;
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+    .thumbnails > .thumbnail .preview img {
+      position:absolute; top:0px; left:0px; z-index:-1;
+    }
+    .thumbnail-container {
+      background: #fff;
+      /*max-width: 460px;*/
+      margin: 0 auto;
+    }
+
+
+  </style>
+
+  <!--<?$APPLICATION->ShowHead()?>-->
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+  <script src="assets/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<!--<body onload="adaptive()">-->
+<body>
+
+<div id="panel"><!--<?$APPLICATION->ShowPanel();?>--></div>
+<div class="background"></div>
+<div class="row- top-ads"></div>
+
+<div class="row header-line">
+  <div class="container">
+    <div class="span2" style="margin-left:50px;">
+      <img src="images/logo_tuur.png" width="161" height="23" />
+    </div>
+    <div class="span3 offset2">
+      <a href="javascript:void();" id="btn-show-filter"><img src="images/icons/down.png" width="12" height="12" /> ТОЧНЫЙ ПОИСК ТУРА
+      </a>
+    </div>
+    <div class="span3 offset2">
+      <div class="pull-right">
+        <a href="#">ВХОД</a>
+        <img src="images/icons/roumb.png" width="12" height="12" />
+        <a href="#">РЕГИСТРАЦИЯ</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row-fluid" style="margin:20px 0 10px 0">
+    <div class="span2 offset" style="margin-left: 40px;">
+      <a href="" class="btn-lighttours">САМЫЕ <br/>ДЕШЁВЫЕ <br/>ТУРЫ</a>
+    </div>
+    <div class="navbar">
+      <div class="">
+
+        <div class="nav-collapse collapse">
+          <ul class="nav filter-type-tours">
+            <li><img src="images/slider/1.jpg" width="70" height="70"/> </li>
+            <li><img src="images/slider/2.jpg" width="70" height="70"/></li>
+            <li><img src="images/slider/3.jpg" width="70" height="70"/></li>
+            <li><img src="images/slider/4.jpg" width="70" height="70"/></li>
+            <li><img src="images/slider/5.jpg" width="70" height="70"/></li>
+            <li><img src="images/slider/6.jpg" width="70" height="70"/></li>
+            <li><img src="images/slider/7.jpg" width="70" height="70"/></li>
+            <li><img src="images/slider/8.jpg" width="93" height="70"/></li>
+            <li><img src="images/slider/9.jpg" width="93" height="70"/></li>
+            <li class="selectedBox"></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="filter-grey-line">
+  </div>
+
+  <div id="filter-block" style="line-height: 55px; height: 55px; margin: 5px 0; display: none;">
+    <div class="span"></div>
+    <div class="span" style="width:350px">
+      <div class="filter-label-price pull-left">ЦЕНА ДО:</div>
+      <div class="filter-label-currency">выбрать валюту</div>
+      <div class="navbar">
+        <div class="">
+
+          <div class="nav-collapse collapse">
+            <ul class="nav filter-price-tours">
+              <li>250</li>
+              <li>500</li>
+              <li>750</li>
+              <li>1000</li>
+              <li>1000+</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="pull-right btn-group" style="line-height: 20px;">
+          <button class="btn" style="border: 0px solid; background: #fff; box-shadow: none; -moz-box-shadow: none;padding:0;">USD</button>
+          <button class="" data-toggle="dropdown" style="border: 0; background: transparent; padding:0;">
+            <img src="images/filter_arrow_currency.png" width="27" height="27" />
+          </button>
+          <ul class="dropdown-menu">
+            <!-- dropdown menu links -->
+            <li><a href="#">USD</a></li>
+            <li><a href="#">RUB</a></li>
+          </ul>
+        </div>
+
+        <!--                <div class="pull-right filter-element-currency">-->
+        <!--                    <select name="" class="span1">-->
+        <!--                        <option value="usd"> USD </option>-->
+        <!--                        <option value="RUR"> RUR </option>-->
+        <!--                    </select>-->
+        <!--                </div>-->
+
+      </div>
+
+    </div>
+    <div class="filter-vert-line span1">&nbsp;</div>
+
+    <!--        BEGIN Count stars-->
+    <div class="span2">
+      <div class="filter-label-price pull-left">ЗВЕЗДЫ:</div>
+      <div class="navbar">
+        <div class="">
+          <div class="nav-collapse collapse">
+            <ul class="nav filter-stars-tours">
+              <li><img src="images/icons/star_active.png" width="16" height="16"/></li>
+              <li><img src="images/icons/star_active.png" width="16" height="16"/></li>
+              <li><img src="images/icons/star_active.png" width="16" height="16"/></li>
+              <li><img src="images/icons/star_noactive.png" width="16" height="16"/></li>
+              <li><img src="images/icons/star_noactive.png" width="16" height="16"/></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--        END Count stars-->
+
+    <div class="filter-vert-line span1">&nbsp;</div>
+    <div class="span3">
+
+      <div class="filter-label-price pull-left">НА СКОЛЬКО ДНЕЙ:</div>
+      <div class="navbar">
+        <div class="">
+
+          <div class="nav-collapse collapse">
+            <ul class="nav filter-days-tours">
+              <li>3</li>
+              <li>7</li>
+              <li>10</li>
+              <li>12</li>
+              <li>15</li>
+              <li>15+</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="filter-vert-line span1">&nbsp;</div>
+
+  </div>
+</div>
+
+
+
+<!--    <div class="content" style="margin: 0px auto; max-width: 1366px; min-width: 1024px; width: 80%;">-->
+<!--    <div class="">-->
+<!---->
+<!--    </div>-->
+<!--</div>-->
+
+
+
+<!--    <div class="btn-group" data-toggle="buttons-checkbox">-->
+<!--        <button type="button" class="btn">250</button>-->
+<!--        <button type="button" class="btn">500</button>-->
+<!--        <button type="button" class="btn">750</button>-->
+<!--        <button type="button" class="btn">1000</button>-->
+<!--        <button type="button" class="btn">1000+</button>-->
+<!--    </div>-->
+
+<!--        <div style='position:relative;left:0px;top:0px;' onMouseOver="document.getElementById('visible').style.visibility='visible'" id='hidden'>-->
+<!--            10-->
+<!--        <select style='position:absolute;left:0px;top:0px;cursor:pointer;visibility:hidden;'-->
+<!--                onMouseOut="document.getElementById('visible').style.visibility='hidden'" onChange='this.form.submit()'-->
+<!--        id='visible' multiple size='3'>-->
+<!--        <option selected value=10>10</option>-->
+<!--        <option value=20>20</option>-->
+<!--        <option value=50>50</option>-->
+<!--        </select>-->
+<!--    </div>-->
+
+<!--<? /*-->
+<!--<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+  <div class="container">
+    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="brand" href="#">Project name</a>
+
+    <div class="nav-collapse collapse">
+      <ul class="nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li class="nav-header">Nav header</li>
+            <li><a href="#">Separated link</a></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form pull-right">
+        <input class="span2" type="text" placeholder="Email">
+        <input class="span2" type="password" placeholder="Password">
+        <button type="submit" class="btn">Sign in</button>
+      </form>
+    </div>
+    &lt;!&ndash;/.nav-collapse &ndash;&gt;
+  </div>
+</div>
+</div>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="block-tour-info" class="container-fluid" style="position: relative; min-width: 1000px; max-width: 1280px; margin: 0 auto;">
+  <div style="position: relative;">
+    <div style="border-radius: 5px 5px 5px 5px; overflow: hidden; width: 1000px; border: 1px solid rgb(255, 255, 255); z-index: 1; position: absolute; height: 580px;">
+      <img src="/upload/image_tours/1_1000.jpg" />
+    </div>
+  </div>
+
+  <div>
+    <div class="pull-left tour-name" style="">
+      <h1>Великобритания<br/>
+        Лондон </h1>
+    </div>
+    <div class="pull-right tour-info">
+      <div class="tour-info-date row-fluid">
+        <div class="row-container">
+          <div class="span4">
+            <span class="label-date-tour row-fluid">ДАТА НАЧАЛА ОТДЫХА</span>
+            <span class="label-date-tour tour-date-value">18 СЕНТЯБРЯ 2013</span>
+          </div>
+          <div class="air-line"></div>
+          <div class="span5">
+            <span class="label-date-tour row-fluid">ДАТА ОКОНЧАНИЯ ОТДЫХА</span>
+            <span class="label-date-tour tour-date-value">28 СЕНТЯБРЯ 2013</span>
+          </div>
+          <div>
+
+          </div>
+          <div class="pull-right" style="margin-right:20px;">
+            <span class="label-date-tour row-fluid">В ДОРОГЕ</span>
+            <span class="label-date-tour tour-date-value">2 дня</span>
+          </div>
+        </div>
+      </div>
+      <div style="margin-left:50px; margin-right: 15px;">
+        <div class="label-count-days">10 дней отдыха в отеле:</div>
+        <div class="hotel-name-rating">
+          <div class="hotel-name pull-left">GARDEN CLIFF RESORT & SPA PATTAYA</div>
+          <div id="star-2" data-score="2" class="star pull-left"></div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row-fluid">
+          <ul class="thumbnails">
+            <li>
+              <a class="thumbnail" href="#">
+                <img alt="260x180" data-src="holder.js/260x180" style="width: 90px; height: 90px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAC0CAYAAABytVLLAAAD2UlEQVR4nO3aQW7iSBiA0b7/UViyZMmaC3CJugKz8jfGKUOi1ghn9BZP6tAV40T6P9sV/owxHgBjjMefT58AcByCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQDuhyuTxOp1Ou1+uXNbfb7e2a7XH+5pzu9/vjdDo9zufz23OZrRljPK25XC4f/z3zlSAczPl8fhqc2cBvB3Bxu91as43B30ZhOa/tsO+dy3bdbI0oHI8gHMhyFT6dTo/7/f4YYzyu1+uXYd6uWYZ/GbDZcWbR+Ok5zQZ9ee/l9Vc/w7JmHZFP/855JggHsh2cMZ4HbP313m353nGW15ZobAd5jH/vApY168Hdu0NYjrO+g9nGZ/ne9ZrltZ8Giv+WIBzc3tX1crk8PV6sB2s7/LPjrENzu92mdyLLe63/vQ3Cd67+s+GfRYLPE4QDWw/tMjjrwd3bQ9g+QowxH+jZsfau2HtBWL/f2vK4MMb8cWV2Z8HnCcJBrWOwN8TbPYRl3XeDMMbzJuarTb5XQXi3CSoIv4cgHNB2I2/9f7PB3N6mz4Iw21dYv/7ueX4vCLP32h5vdnyPDMckCAe0t6M/xnwwtxuP39lU3H7fu13/vSB85+pvU/H3EISDWd/C763Z2zN49ae/2QCur+7bvzBsvXvkmN0hbPc9Zuf36d83zwThQPY+5LMdnr2NxZ98MGn9Xvf7/enr2VX73V8ZXr3XGD6Y9FsIwoHsDfGrvYRXQ/zqo8uzzb/1+u2xXm0q+ujy/4cgABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAKQfwBy//hWZWFPwwAAAABJRU5ErkJggg==">
+              </a>
+            </li>
+            <li>
+              <a class="thumbnail" href="#">
+                <img alt="260x180" data-src="holder.js/260x180" style="width: 90px; height: 90px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAC0CAYAAABytVLLAAAD2UlEQVR4nO3aQW7iSBiA0b7/UViyZMmaC3CJugKz8jfGKUOi1ghn9BZP6tAV40T6P9sV/owxHgBjjMefT58AcByCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQDuhyuTxOp1Ou1+uXNbfb7e2a7XH+5pzu9/vjdDo9zufz23OZrRljPK25XC4f/z3zlSAczPl8fhqc2cBvB3Bxu91as43B30ZhOa/tsO+dy3bdbI0oHI8gHMhyFT6dTo/7/f4YYzyu1+uXYd6uWYZ/GbDZcWbR+Ok5zQZ9ee/l9Vc/w7JmHZFP/855JggHsh2cMZ4HbP313m353nGW15ZobAd5jH/vApY168Hdu0NYjrO+g9nGZ/ne9ZrltZ8Giv+WIBzc3tX1crk8PV6sB2s7/LPjrENzu92mdyLLe63/vQ3Cd67+s+GfRYLPE4QDWw/tMjjrwd3bQ9g+QowxH+jZsfau2HtBWL/f2vK4MMb8cWV2Z8HnCcJBrWOwN8TbPYRl3XeDMMbzJuarTb5XQXi3CSoIv4cgHNB2I2/9f7PB3N6mz4Iw21dYv/7ueX4vCLP32h5vdnyPDMckCAe0t6M/xnwwtxuP39lU3H7fu13/vSB85+pvU/H3EISDWd/C763Z2zN49ae/2QCur+7bvzBsvXvkmN0hbPc9Zuf36d83zwThQPY+5LMdnr2NxZ98MGn9Xvf7/enr2VX73V8ZXr3XGD6Y9FsIwoHsDfGrvYRXQ/zqo8uzzb/1+u2xXm0q+ujy/4cgABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAKQfwBy//hWZWFPwwAAAABJRU5ErkJggg==">
+              </a>
+            </li>
+            <li>
+              <a class="thumbnail" href="#">
+                <img alt="260x180" data-src="holder.js/260x180" style="width: 90px; height: 90px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAC0CAYAAABytVLLAAAD2UlEQVR4nO3aQW7iSBiA0b7/UViyZMmaC3CJugKz8jfGKUOi1ghn9BZP6tAV40T6P9sV/owxHgBjjMefT58AcByCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQDuhyuTxOp1Ou1+uXNbfb7e2a7XH+5pzu9/vjdDo9zufz23OZrRljPK25XC4f/z3zlSAczPl8fhqc2cBvB3Bxu91as43B30ZhOa/tsO+dy3bdbI0oHI8gHMhyFT6dTo/7/f4YYzyu1+uXYd6uWYZ/GbDZcWbR+Ok5zQZ9ee/l9Vc/w7JmHZFP/855JggHsh2cMZ4HbP313m353nGW15ZobAd5jH/vApY168Hdu0NYjrO+g9nGZ/ne9ZrltZ8Giv+WIBzc3tX1crk8PV6sB2s7/LPjrENzu92mdyLLe63/vQ3Cd67+s+GfRYLPE4QDWw/tMjjrwd3bQ9g+QowxH+jZsfau2HtBWL/f2vK4MMb8cWV2Z8HnCcJBrWOwN8TbPYRl3XeDMMbzJuarTb5XQXi3CSoIv4cgHNB2I2/9f7PB3N6mz4Iw21dYv/7ueX4vCLP32h5vdnyPDMckCAe0t6M/xnwwtxuP39lU3H7fu13/vSB85+pvU/H3EISDWd/C763Z2zN49ae/2QCur+7bvzBsvXvkmN0hbPc9Zuf36d83zwThQPY+5LMdnr2NxZ98MGn9Xvf7/enr2VX73V8ZXr3XGD6Y9FsIwoHsDfGrvYRXQ/zqo8uzzb/1+u2xXm0q+ujy/4cgABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAKQfwBy//hWZWFPwwAAAABJRU5ErkJggg==">
+              </a>
+            </li>
+            <li>
+              <a class="thumbnail" href="#">
+                <img alt="260x180" data-src="holder.js/260x180" style="width: 90px; height: 90px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAC0CAYAAABytVLLAAAD2UlEQVR4nO3aQW7iSBiA0b7/UViyZMmaC3CJugKz8jfGKUOi1ghn9BZP6tAV40T6P9sV/owxHgBjjMefT58AcByCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQgAgCEEEAIghABAGIIAARBCCCAEQQDuhyuTxOp1Ou1+uXNbfb7e2a7XH+5pzu9/vjdDo9zufz23OZrRljPK25XC4f/z3zlSAczPl8fhqc2cBvB3Bxu91as43B30ZhOa/tsO+dy3bdbI0oHI8gHMhyFT6dTo/7/f4YYzyu1+uXYd6uWYZ/GbDZcWbR+Ok5zQZ9ee/l9Vc/w7JmHZFP/855JggHsh2cMZ4HbP313m353nGW15ZobAd5jH/vApY168Hdu0NYjrO+g9nGZ/ne9ZrltZ8Giv+WIBzc3tX1crk8PV6sB2s7/LPjrENzu92mdyLLe63/vQ3Cd67+s+GfRYLPE4QDWw/tMjjrwd3bQ9g+QowxH+jZsfau2HtBWL/f2vK4MMb8cWV2Z8HnCcJBrWOwN8TbPYRl3XeDMMbzJuarTb5XQXi3CSoIv4cgHNB2I2/9f7PB3N6mz4Iw21dYv/7ueX4vCLP32h5vdnyPDMckCAe0t6M/xnwwtxuP39lU3H7fu13/vSB85+pvU/H3EISDWd/C763Z2zN49ae/2QCur+7bvzBsvXvkmN0hbPc9Zuf36d83zwThQPY+5LMdnr2NxZ98MGn9Xvf7/enr2VX73V8ZXr3XGD6Y9FsIwoHsDfGrvYRXQ/zqo8uzzb/1+u2xXm0q+ujy/4cgABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAKQfwBy//hWZWFPwwAAAABJRU5ErkJggg==">
+              </a>
+            </li>
+            <li>
+              <a class="thumbnail" href="#">
+                <img src="images/icons/digital_camera.png" width="29" height="21" />
+                <span>все <b>24</b> фото</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="preview-text">
+          GARDEN CLIFF RESORT & SPA PATTAYA один из лучших отелей курортного типа в Паттайе, в тихом уголке на берегу Crescent Moon Beach с видом на удивительный храм истины.
+        </div>
+        <div class="row-fluid tour-features">
+          <div class="tour-feature-item">
+            <span class="label-features">Питание</span>
+            <div class="features-value-container">
+              <div class="features-value">BB</div>
+            </div>
+          </div>
+          <div class="filter-vert-line"></div>
+          <div class="tour-feature-item">
+            <span class="label-features">Размещение</span>
+            <div class="features-value-container">
+              <div class="features-value">Standart</div>
+              <div class="features-value">DBL+chld</div>
+            </div>
+          </div>
+          <div class="filter-vert-line"></div>
+          <div class="tour-feature-item">
+            <span class="label-features">Транспорт</span>
+            <div class="features-value-container">
+              <div class="features-value">BB</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="row-fluid tour-timezone">
+          Aeroflot MOS DME 18.02.2013 18:20 > BGK 18.02.2013 20:00   <br/>
+          Thai Airlines BGK 18.02.2013 20:00 > MOS DME 18.02.2013 18:20 - вы дома :)
+        </div>
+      </div>
+    </div>
+    <!--        <div class="clearfix"></div>-->
+    <div id="tour-info-price-operator" style="">
+      <div class="tour-price pull-left">
+        <div class="label-brown">ЦЕНА ТУРА</div>
+        <div class="tour-price-value">$ 1 604</div>
+        <div class="pull-right btn-group" style="line-height: 20px; margin-right: 45px; margin-bottom: 20px;">
+          <button class="btn" style="border: 0px solid; background: transparent; box-shadow: none; -moz-box-shadow: none;padding:0; text-decoration: none; color: #D89268; border-bottom: 1px dotted #D89268;">выбрать валюту</button>
+          <button class="" data-toggle="dropdown" style="border: 0; background: transparent; padding:0; margin-left: 5px;">
+            <img src="images/filter_arrow_currency_brown.png" width="10" height="6" />
+          </button>
+          <ul class="dropdown-menu">
+            <!-- dropdown menu links -->
+            <li><a href="#">USD</a></li>
+            <li><a href="#">RUB</a></li>
+          </ul>
+        </div>
+        <div class="clearfix"></div>
+        <a href="#" class="btn-block btn-buy-tour">
+          КУПИТЬ
+        </a>
+        <a href="#" class="row-fluid btn-help-buy-tour">Помощь в покупке тура</a>
+      </div>
+      <div class="tour-operator pull-right">
+        <div class="label-brown">ТУРОПЕРАТОР</div>
+        <div class="tour-operator-name">Muzenidis Travel Very Travel Company</div>
+        <div class="tour-operator-logo">
+
+        </div>
+        <a class="row-fluid btn-help-buy-tour" href="#">Контактная информация</a>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<footer><p>&copy; Company 2013</p></footer>
+
+
+</body>
